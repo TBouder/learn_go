@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 18:53:06 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 00:01:51 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 00:20:04 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ func	ft_error(str string) {
 }
 
 func	main() {
+	prog_name 	:= os.Args[0]
+
 	if len(os.Args) != 2 {
+		fmt.Println("usage :", prog_name, "file")
 		os.Exit(2)
 	}
 
-	var		prog_name = os.Args[0]
 	var		file_name = os.Args[1]
 
 	file_arr := ft_get_file(file_name)
@@ -33,7 +35,7 @@ func	main() {
 	if (len(file_arr) == 0) {
 		ft_error("Err : file is empty")
 	}
-
-	fmt.Println(prog_name)
-	fmt.Println(file_name)
+	if (len(file_arr) > 26) {
+		ft_error("Err : more than 26 tetriminos")
+	}
 }

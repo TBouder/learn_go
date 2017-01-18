@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 00:01:30 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 00:02:39 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 00:10:44 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ func	ft_get_piece(index *int, total_file_len int, file []byte) []string {
 		piece_arr = append(piece_arr, strings.Join(ft_get_line(index, &sub_index, total_file_len, file), ""))
 		sub_index++
 	}
+	ft_check_nb_sharp(piece_arr)
 
 	if ((*index) < total_file_len) {
 		ft_check_cr(file[*index])
@@ -50,7 +51,6 @@ func	ft_get_piece(index *int, total_file_len int, file []byte) []string {
 
 	return (piece_arr)
 }
-
 
 func	ft_get_file(filename string) []string {
 
