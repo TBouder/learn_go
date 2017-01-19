@@ -6,11 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 15:12:39 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 15:20:20 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 15:44:33 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 package	main
+import	"strings"
 
 var valid_pieces = [19][]string {
 	{"#", "#", "#", "#"},
@@ -70,6 +71,12 @@ func	ft_valid_tetriminos(file_arr [][]string) {
 	for (index < nb_pieces) {
 		if (ft_verif_tetri(file_arr[index]) == 0) {
 			ft_error("Err : bad tetriminos")
+		}
+
+		i := 0
+		for (i < len(file_arr[index])) {
+			file_arr[index][i] = strings.Replace(file_arr[index][i], "#", string(index % 20 + 65), -1)
+			i++
 		}
 		index++
 	}
