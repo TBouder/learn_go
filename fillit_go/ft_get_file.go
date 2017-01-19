@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 00:01:30 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 12:56:41 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 15:14:23 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ func	ft_get_file(filename string) [][]string {
 		ft_error("Err : file is empty")
 	}
 
-	ft_check_valid_tetriminos(file_arr)
+	ft_valid_tetriminos(file_arr)
 
 	return (file_arr)
 }

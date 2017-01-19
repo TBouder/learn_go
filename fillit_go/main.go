@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 18:53:06 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 12:57:33 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 15:14:37 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ func	main() {
 	}
 
 	file_name	:= os.Args[1]
-	// file_arr	:= ft_get_file(file_name)
-	ft_get_file(file_name)
+	file_arr	:= ft_get_file(file_name)
+	fmt.Println(file_arr)
 }

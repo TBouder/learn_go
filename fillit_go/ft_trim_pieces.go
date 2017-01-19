@@ -6,12 +6,12 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 12:17:13 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 14:03:43 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 15:10:08 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 package	main
-import	"fmt"
+// import	"fmt"
 
 /*Will go through the piece to delete the empty raws*/
 func	ft_trim_piece_rows(piece []string) []string {
@@ -104,6 +104,6 @@ func	ft_trim_piece(piece []string) []string {
 	to_trim			= ft_trim_count_col_end(trim_tmp, nb_columns)
 	trim_fnl		:= ft_trim_piece_col_end(trim_tmp, nb_columns, to_trim)
 
-	fmt.Println(trim_fnl)
+	// fmt.Println(trim_fnl)
 	return (trim_fnl)
 }
