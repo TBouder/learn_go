@@ -6,12 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 23:31:44 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 23:32:27 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 23:36:10 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 package	main
 import	"fmt"
+import	"os"
 
 func	ft_find_map_min_size(nb_sharps int) int {
 	base	:= 4
@@ -54,4 +55,9 @@ func	ft_print_arr(board [][]string, color string) {
 		if (color != "") {fmt.Print("\033[0m")}
 		i++
 	}
+}
+
+func	ft_error(str string) {
+	fmt.Println(str)
+	os.Exit(-1)
 }

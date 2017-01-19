@@ -6,19 +6,13 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 18:53:06 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 16:00:17 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 23:36:46 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 package	main
-
-import	"os"
 import	"fmt"
-
-func	ft_error(str string) {
-	fmt.Println(str)
-	os.Exit(-1)
-}
+import	"os"
 
 func	main() {
 	prog_name 	:= os.Args[0]
@@ -30,7 +24,5 @@ func	main() {
 
 	file_name	:= os.Args[1]
 	file_arr	:= ft_get_file(file_name)
-
-	// fmt.Println(nb_sharps)
 	ft_algo_launcher(file_arr)
 }
