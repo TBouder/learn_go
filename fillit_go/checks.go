@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 23:47:53 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 15:12:50 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 15:19:12 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ import	"fmt"
 import	"strings"
 
 func	ft_check_file(filename string, err error) {
-	if err != nil {
+	if (err != nil) {
 		fmt.Println("Err : cannot read file ->", filename)
 		os.Exit(-1)
 	}
@@ -39,6 +39,7 @@ func	ft_check_cr(char byte) {
 
 func	ft_check_nb_sharp(arr []string) {
 	nb_sharp	:= 0
+	
 	nb_sharp += strings.Count(arr[0], "#")
 	nb_sharp += strings.Count(arr[1], "#")
 	nb_sharp += strings.Count(arr[2], "#")

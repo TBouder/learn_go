@@ -6,7 +6,7 @@
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 18:53:06 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 15:14:37 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 15:18:56 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ func	ft_error(str string) {
 func	main() {
 	prog_name 	:= os.Args[0]
 
-	if len(os.Args) != 2 {
+	if (len(os.Args) != 2) {
 		fmt.Println("usage :", prog_name, "file")
 		os.Exit(2)
 	}
