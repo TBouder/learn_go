@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_pieces.go                                   :+:      :+:    :+:   */
+/*   ft_get_file.go                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 00:01:30 by tbouder           #+#    #+#             */
-/*   Updated: 2017/01/19 00:10:44 by tbouder          ###   ########.fr       */
+/*   Updated: 2017/01/19 12:51:09 by tbouder          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ func	ft_get_piece(index *int, total_file_len int, file []byte) []string {
 	total_piece_len		:= 4
 	piece_arr			:= make([]string, 0)
 
-	for sub_index < total_piece_len {
+	for (sub_index < total_piece_len) {
 		piece_arr = append(piece_arr, strings.Join(ft_get_line(index, &sub_index, total_file_len, file), ""))
 		sub_index++
 	}
 	ft_check_nb_sharp(piece_arr)
+	piece_arr = ft_trim_piece(piece_arr)
 
 	if ((*index) < total_file_len) {
 		ft_check_cr(file[*index])
@@ -52,16 +53,23 @@ func	ft_get_piece(index *int, total_file_len int, file []byte) []string {
 	return (piece_arr)
 }
 
-func	ft_get_file(filename string) []string {
+func	ft_get_file(filename string) [][]string {
 
 	dat, err		:= ioutil.ReadFile(filename)
-	file_arr		:= make([]string, 0)
+	file_arr		:= [][]string{}
 	total_file_len	:= len(dat)
 	index			:= 0
 
 	ft_check_file(filename, err)
 	for index < total_file_len {
-		file_arr = append(file_arr, strings.Join(ft_get_piece(&index, total_file_len, dat), ""))
+		file_arr = append(file_arr, ft_get_piece(&index, total_file_len, dat))
+	}
+
+	if (len(file_arr) == 0) {
+		ft_error("Err : file is empty")
+	}
+	if (len(file_arr) > 26) {
+		ft_error("Err : more than 26 tetriminos")
 	}
 
 	return (file_arr)
